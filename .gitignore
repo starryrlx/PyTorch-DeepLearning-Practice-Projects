@@ -1,0 +1,8 @@
+# 忽略datasets中的数据集
+/datasets/*
+
+# 忽略.ipynb_checkpoints文件夹
+*.ipynb_checkpoints
+
+# 忽略模型权重文件
+/models/*

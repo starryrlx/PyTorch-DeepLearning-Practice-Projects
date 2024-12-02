@@ -1,3 +1,6 @@
+下载[Kaggle 猫狗数据集](https://www.microsoft.com/en-us/download/details.aspx?id=54765)到本地，然后运行·=`dataset_process`代码划分数据集。
+*原始数据中存在无法读取的图片(`Cat/666.png`、`Dog/11702.png`), 直接删除或替换即可。*
+
 ### 训练迭代过程(部分)
 
 *之所以是部分，是因为作者在这个项目快做完的时候才想到要记录一下过程...  于是就设计了几个不同的配置加以对照*
@@ -7,7 +10,7 @@
 - 3. lr=1e-3, 使用StepLR学习率衰减策略，权重衰减: Train_acc:90.3%, Train_loss:0.239, Test_acc:88.0%，Test_loss:0.304 相比于1, 学习率衰减和权重衰减确实能减轻过拟合, 但是过拟合仍然存在
 - 4. lr=1e-3, num_epochs = 20, 增加水平翻转、旋转、颜色抖动的数据增强操作：Train_acc:87.9%, Train_loss:0.291, Test_acc:87.6%，Test_loss:0.288 完美解决了过拟合的问题！果然数据集才是根本。不过准确率还是差了一些 
 - 5. lr=1e-3, num_epochs = 20, 新增加一个卷积层`conv4`：Train_acc:94.9%, Train_loss:0.124, Test_acc:91.9%，Test_loss:0.199 只增加了一个卷积层就大幅提升了模型性能！！！看来模型架构是关键。存在过拟合
-- 6. lr=1e-3, num_epochs = 20, 数据增强，使用StepLR学习率衰减策略，权重衰减，新增加一个卷积层`conv4`： Train_acc:93.6%, Train_loss:0.166, Test_acc:92.5%，Test_loss:0.185 终极模型，可惜
+- 6. lr=1e-3, num_epochs = 20, 数据增强，使用StepLR学习率衰减策略，权重衰减，新增加一个卷积层`conv4`： Train_acc:93.6%, Train_loss:0.166, Test_acc:92.5%，Test_loss:0.185 终极模型，可惜效果比预想的要差一些
 
 
 

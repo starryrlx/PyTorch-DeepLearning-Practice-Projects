@@ -1,5 +1,5 @@
 参考文章：
-[文本分类原理与实践](https://aibydoing.com/notebooks/chapter09-04-lab-principles-and-practices-of-text-classification) 精读
+[文本分类原理与实践](https://aibydoing.com/notebooks/chapter09-04-lab-principles-and-practices-of-text-classification) 
 
 [预训练模型分类](https://juejin.cn/post/7327721919426494474#heading-3)
 
@@ -44,9 +44,9 @@ Train_acc:74.4%, Train_loss:0.495, Test_acc:68.1%，Test_loss:0.610
 
 max_length=64 -> 100, vector_size=128 -> 256, dropout=0.5 (模型可训练参数数量: 660000 -> 2760000)  Train_acc:76.0%, Train_loss:0.465, Test_acc:68.1%，Test_loss:0.640  为什么Test_acc就是提不上去？
 
-上点强度：训练嵌入层 self.embedding.weight.requires_grad = True (模型可训练参数数量: 2760000 -> 56,480000) Train_acc一路飙到了94.0%，但是Test_acc不增反降：Train_acc:94.0%, Train_loss:0.124, Test_acc:63.2%，Test_loss:2.856
+上点强度：训练嵌入层 self.embedding.weight.requires_grad = True (模型可训练参数数量: 2760000 -> 56480000) Train_acc一路飙到了94.0%，但是Test_acc不增反降：Train_acc:94.0%, Train_loss:0.124, Test_acc:63.2%，Test_loss:2.856
 
-我们模型的词表太大了，导致整个模型可学习参数都在embedding层，尝试减少词表大小 min_count=1 -> min_count=4 : (词表大小： 模型可训练参数数量: 56,480000 -> )
+我们模型的词表太大了，导致整个模型可学习参数都在embedding层，尝试减少词表大小 min_count=1 -> min_count=4 : (词表大小: 230000 -> 60000  模型可训练参数数量: 56480000 -> 18690000) 不训了，一样的过拟合
 
 到这里就尽力啦，留待日后再探索优化
 

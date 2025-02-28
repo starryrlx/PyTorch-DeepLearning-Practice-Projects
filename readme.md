@@ -10,6 +10,7 @@
 - 2024-11-23: 新增项目1: 手写体数字识别
 - 2024-12-02: 新增项目2: 猫狗图像分类
 - 2025-01-01: 新增项目3: 中文影评文本分类
+- 2025-02-28: 新增项目4: GAN 图像生成
 
 ---
 
@@ -18,6 +19,7 @@
 1. [手写体数字识别 (Handwritten Digit Recognition)](#1-手写体数字识别-handwritten-digit-recognition)  
 2. [猫狗图像分类 (Cat & Dog Image Classification)](#2-猫狗图像分类-cat--dog-image-classification)
 3. [中文影评文本分类 (Chinese Movie Review Text Classification)](#3-中文影评文本分类-chinese-movie-review-text-classification)
+4. [GAN-图像生成 (GAN Image Generation)](#4-GAN-图像生成-GAN-image-generation)
 
 ---
 
@@ -125,10 +127,30 @@ PyTorch
 
 ---
 
+## 4. GAN-图像生成 (GAN Image Generation)
+
+🎨🖼️
+
+### 🎯 项目概述
+
+本项目基于 MNIST 数据集, 使用生成对抗网络 (GAN) 框架，用于生成手写数字图像。
+
+### 项目展示
+
+![demo.png](./4_GAN_Image_Generator/data/epoch_25.png)
+
+### 项目亮点 ✨
+- 引入类别标签使生成器能够生成特定类别的图像，（应该）可以直接直接扩展到其他图像生成任务
+- 使用 `Wasserstein GAN with Gradient Penalty (WGAN-GP)损失函数` 和 `频谱归一化 (Spectral Normalization)` 提高训练的稳定性
+
+### 待探究的问题 🔬
+- 生成图像的质量仍有提升空间
+- 能否将代码迁移到其他图像生成任务？
+
+
 
 ## ✨ 更多项目待续...
 - 中英文翻译  [基于Transformer的中英文翻译项目实战](https://www.heywhale.com/mw/project/614314778447b80017694844)
-- GAN-图像生成 
 - 语音识别
 - yolo目标检测
 - alphago围棋

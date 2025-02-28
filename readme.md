@@ -137,7 +137,7 @@ PyTorch
 
 ### 项目展示
 
-![demo.png](./4_GAN_Image_Generator/data/epoch_25.png)
+![demo.png](./4_GAN_Image_Generator/data/demo.png)
 
 ### 项目亮点 ✨
 - 引入类别标签使生成器能够生成特定类别的图像，（应该）可以直接直接扩展到其他图像生成任务

@@ -33,34 +33,4 @@ class TextClassifier(nn.Module):
 - 实现早停机制，避免过拟合
 
 
-### 训练迭代过程(Word2Vec+LSTM)
-
-- lr=1e-4, epochs=10 : Train_acc:69.7%, Train_loss:0.590, Test_acc:67.9%，Test_loss:0.599  训练不充分，没有收敛
-- lr=1e-4, epochs=20 : Train_acc:72.2%, Train_loss:0.529, Test_acc:66.4%，Test_loss:0.611  有点过拟合了，准确率也很低
-- lr=1e-3, epochs=10 : Train_acc:73.9%, Train_loss:0.501, Test_acc:66.7%，Test_loss:0.628  准确率略有提升
-- lr=1e-3, epochs=10使用StepLR动态调整学习率 step_size=2, gamma=0.5 : Train_acc:75.0%, Train_loss:0.484, Test_acc:68.1%，Test_loss:0.611 训练集正确率很高，测试集准确率很有差距，很明显的过拟合
-前面四种方法只能提升Train_acc，但是Test_acc没有提升  
-
-句子长度：max_length 50 -> 64; Word2Vec window 5 -> 8; self.lstm num_layers=2, dropout=0.3, 增加一个全连接层  (模型可训练参数数量: 230000 -> 660000)
-Train_acc:74.4%, Train_loss:0.495, Test_acc:68.1%，Test_loss:0.610
-
-max_length=64 -> 100, vector_size=128 -> 256, dropout=0.5 (模型可训练参数数量: 660000 -> 2760000)  Train_acc:76.0%, Train_loss:0.465, Test_acc:68.1%，Test_loss:0.640
-
-上点强度：训练嵌入层 self.embedding.weight.requires_grad = True (模型可训练参数数量: 2760000 -> 56480000) Train_acc一路飙到了94.0%，但是Test_acc不增反降：Train_acc:94.0%, Train_loss:0.124, Test_acc:63.2%，Test_loss:2.856
-
-我们模型的词表太大了，导致整个模型可学习参数都在embedding层，尝试减少词表大小 min_count=1 -> min_count=4 : (词表大小: 230000 -> 60000  模型可训练参数数量: 56480000 -> 18690000) 不训了，一样的过拟合
-
-到这里就尽力啦，留待日后再探索优化
-
-
-本来随手加个一个正则化，结果跑出来测试集和验证集都是50%的正确率，直接把模型搞废了，给我吓了一大跳 optimizer = torch.optim.Adam(model.parameters(), lr=1e-3, weight_decay=)试了0.01,1e-5,1e-6, 应该是因为惩罚权重导致模型参数接近于0失去了学习能力？
-
-将数据从20w -> 50w, 无明显提升， emm...  
-
-为了减轻过拟合，尝试简化模型参数：
-- vector_size=64
-- self.embedding.weight.requires_grad = False
-- hidden_dim=64
-
-Train_acc:70.1%, Train_loss:0.556, Test_acc:69.2%，Test_loss:0.574
-虽然模型性能提升不大，但是没有出现过拟合
+训练结果不是很好，有可能是数据的问题，数据本身质量不高或者划分正负例方式有问题

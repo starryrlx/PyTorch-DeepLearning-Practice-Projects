@@ -151,7 +151,7 @@ PyTorch
 
 ## 5. RL-贪吃蛇
 
-<video src="./5_RL_Snake/data/AI_Snake.mp4"></video>
+![RL-贪吃蛇](./5_RL_Snake/data/AI_Snake.gif)
 
 
 ## ✨ 更多项目待续...

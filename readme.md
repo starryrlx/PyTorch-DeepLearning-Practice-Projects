@@ -147,6 +147,11 @@ PyTorch
 - 生成图像的质量仍有提升空间
 - 能否将代码迁移到其他图像生成任务？
 
+---
+
+## 5. RL-贪吃蛇
+
+<video src="./5_RL_Snake/data/AI_Snake.mp4"></video>
 
 
 ## ✨ 更多项目待续...

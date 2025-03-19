@@ -11,6 +11,7 @@
 - 2024-12-02: 新增项目2: 猫狗图像分类
 - 2025-01-01: 新增项目3: 中文影评文本分类
 - 2025-02-28: 新增项目4: GAN 图像生成
+- 2025-03-19: 新增项目5: RL 贪吃蛇
 
 ---
 
@@ -20,6 +21,7 @@
 2. [猫狗图像分类 (Cat & Dog Image Classification)](#2-猫狗图像分类-cat--dog-image-classification)
 3. [中文影评文本分类 (Chinese Movie Review Text Classification)](#3-中文影评文本分类-chinese-movie-review-text-classification)
 4. [GAN-图像生成 (GAN Image Generation)](#4-GAN-图像生成-GAN-image-generation)
+5. [RL-贪吃蛇 (Reinforcement Learning Snake)](#5-RL-贪吃蛇-reinforcement-learning-snake)
 
 ---
 
@@ -149,9 +151,23 @@ PyTorch
 
 ---
 
-## 5. RL-贪吃蛇
+## 5. RL-贪吃蛇 (Reinforcement Learning Snake)
+
+🐍🎮
+### 🎯 项目概述
+
+本项目基于经典的贪吃蛇游戏，使用 PyTorch 实现了一个基于 深度 Q 学习 (DQN) 的强化学习模型。
+贪吃蛇是大家都玩腻了的无聊游戏，不过自己训练AI去玩还是别有一番趣味的。可以尝试修改游戏逻辑和奖励机制，让自己的AI小蛇更聪明！
+
+### 项目展示
 
 ![RL-贪吃蛇](./5_RL_Snake/data/AI_Snake.gif)
+
+### 项目亮点 ✨
+- 可以作为强化学习入门练手项目，好玩😋
+- 使用 DQN 算法，包含当前策略网络和目标策略网络，提升训练稳定性。
+- 实现了 经验回放 (Experience Replay) 和 Epsilon-Greedy 策略，平衡探索与利用。
+- 模型权重自动保存与加载，支持断点续训。
 
 
 ## ✨ 更多项目待续...

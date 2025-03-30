@@ -173,6 +173,7 @@ PyTorch
 ## ✨ 更多项目待续...
 - 中英文翻译  [基于Transformer的中英文翻译项目实战](https://www.heywhale.com/mw/project/614314778447b80017694844)
 - 语音识别
+- Auto-Regressive + Diffusion 生图
 - yolo目标检测
 - alphago围棋
 - 对话系统

@@ -22,6 +22,7 @@
 3. [中文影评文本分类 (Chinese Movie Review Text Classification)](#3-中文影评文本分类-chinese-movie-review-text-classification)
 4. [GAN-图像生成 (GAN Image Generation)](#4-GAN-图像生成-GAN-image-generation)
 5. [RL-贪吃蛇 (Reinforcement Learning Snake)](#5-RL-贪吃蛇-reinforcement-learning-snake)
+6. [对抗样本攻击 (Adversarial Attack)](#6-对抗样本攻击-adversarial-attack)
 
 ---
 
@@ -174,6 +175,9 @@ PyTorch
 ## 6. 对抗样本攻击 (Adversarial Attack)  
 
 👊🤖🔥
+### 🎯 项目概述
+
+模型对抗样本攻击（Adversarial Attack）指的是通过对输入数据进行微小、难以察觉的扰动，使得模型产生错误的预测或分类结果。
 
 ---
 

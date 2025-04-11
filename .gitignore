@@ -4,5 +4,8 @@
 # 忽略.ipynb_checkpoints文件夹
 *.ipynb_checkpoints
 
+# 忽略__pycache__文件夹
+**/__pycache__
+
 # 忽略模型权重文件
 /models/*

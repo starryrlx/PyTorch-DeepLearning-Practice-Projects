@@ -20,7 +20,7 @@
 
 1. [手写体数字识别 (Handwritten Digit Recognition)](#1-手写体数字识别-handwritten-digit-recognition)  
 2. [猫狗图像分类 (Cat & Dog Image Classification)](#2-猫狗图像分类-cat--dog-image-classification)
-3. [中文影评文本分类 (Chinese Movie Review Text Classification)](#3-中文影评文本分类-chinese-movie-review-text-classification)
+3. [Transformer-情感分类 (Transformer-based Sentiment Classification)](#3-transformer-情感分类-transformer-based-sentiment-classification)
 4. [GAN-图像生成 (GAN Image Generation)](#4-GAN-图像生成-GAN-image-generation)
 5. [RL-贪吃蛇 (Reinforcement Learning Snake)](#5-RL-贪吃蛇-reinforcement-learning-snake)
 6. [对抗样本攻击 (Adversarial Attack)](#6-对抗样本攻击-adversarial-attack)
@@ -114,23 +114,27 @@ PyTorch
 
 ---
 
-## 3. 中文影评文本分类 (Chinese Movie Review Text Classification) 
+## 3. Transformer-情感分类 (Transformer-based Sentiment Classification) 
 
 🎬🗣
 
 ### 🎯 项目概述
 
-本项目基于从豆瓣爬取的中文影评数据集，分别使用 Word2Vec+双向 LSTM 与 预训练的 BERT 模型进行文本分类。
+本项目基于从豆瓣爬取的中文影评数据集，使用 PyTorch 实现了一个 Transformer 模型进行二分类任务（正面/负面情感）。  
+项目使用 bert-base-chinese 分词器对中文文本进行预处理，并通过 Transformer 架构捕捉评论的语义信息，旨在实现高效、准确的情感分类。  
+
 
 ### 项目展示
+![Transformer-情感分类](./3_Transformer_Sentiment_Classification/data/demo.png)
 
 ### 项目亮点 ✨
-- 本项目所使用的中文影评数据集是作者自己构建的，数据丰富，质量较高
-- 项目中使用了两种不同的文本分类模型，Word2Vec+双向 LSTM 和 预训练 BERT
+- **大规模自建数据集**：数据集由作者自己构建，包含 50 万+ 条高质量中文影评，数据丰富，质量较高
+- **自定义 Transformer 模型**：从头设计的 TransformerClassifier，包含可学习位置编码、多层 Transformer Encoder 和分类头，灵活适配中文情感分析  
 
 ### 待探究的问题 🔬
-- train_Word2Vec 过拟合现象很严重, 不知道怎么优化
-- 就算是用预训练的 BERT 模型(100M参数), 训练效果也不好,还会出现过拟合
+- **数据处理：** 本项目中对影评数据处理比较粗糙，可以探究多种中文文本数据预处理方法
+- **语义分析：** 提取 Transformer 注意力权重，分析哪些词对情感分类贡献最大，生成情感关键词云
+
 
 ---
 

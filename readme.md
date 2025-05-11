@@ -186,19 +186,34 @@ PyTorch
 ### 🎯 项目概述
 
 模型对抗样本攻击（Adversarial Attack）指的是通过对输入数据进行微小、难以察觉的扰动，使得模型产生错误的预测或分类结果。   
-本项目基于第 2 个项目[猫狗图像分类 (Cat & Dog Image Classification)](./2_Cat_Dog_Image_Classification/)的模型，使用 PGD（Projected Gradient Descent）攻击方法生成对抗样本。  
-**本项目仅用于学习目的，帮助大家理解深度学习模型的脆弱性，并意识到人工智能系统在现实应用中可能面临的安全风险，从而提高安全意识。请勿将本项目用于任何恶意用途！！！**
+本项目基于第 2 个项目[猫狗图像分类 (Cat & Dog Image Classification)](./2_Cat_Dog_Image_Classification/)的模型，使用快速梯度符号法（FGSM）和投影梯度下降（PGD）生成对抗样本，分析模型在不同扰动强度下的鲁棒性。。  
 
 ### 项目展示
+#### FGSM 批量攻击分析
+<table>
+  <tr>
+    <td style="width: 50%; vertical-align: top;">
+      <img src="./6_Adversarial_Attack/data/accuracy_vs_epsilon_plot.png" alt="正确率曲线" style="width: 100%; height: auto;">
+    </td>
+    <td style="width: 50%; vertical-align: top;">
+      <img src="./6_Adversarial_Attack/data/fgsm_examples_grid.png" alt="攻击样本格" style="width: 100%; height: auto;">
+    </td>
+  </tr>
+</table>
 
+#### PGD 真实图片单体攻击分析
 ![对抗样本攻击](./6_Adversarial_Attack/data/demo.jpg)
 
-### 待探究的问题 🔬
-- 生成的对抗样本与原图差别有些大（不排除代码逻辑的问题）
-- 猫的图片预测结果没有改变  
 
-**需要探索扰动更小、效果更强的攻击方法。**  
-最近有时间了完善下😭  
+### 项目亮点 ✨
+- 展示了模型准确率随扰动强度（$\epsilon$）急剧下降，验证了深度学习模型对对抗攻击的脆弱性
+- 针对真实世界猫狗图像，生成视觉上几乎无差别的对抗样本
+- 通过图像对比，直观展示对抗样本的微小扰动及其对模型预测的显著影响
+
+### 待探究的问题 🔬
+- 猫的图片预测结果没有改变  
+- 通过分析模型预测的置信度可以更好地理解攻击效果  
+
 
 ---
 

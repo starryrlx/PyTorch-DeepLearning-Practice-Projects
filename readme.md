@@ -191,7 +191,7 @@ PyTorch
 
 ### 项目展示
 
-<!-- ![对抗样本攻击](./6_Adversarial_Attack/data/demo.jpg) -->
+![对抗样本攻击](./6_Adversarial_Attack/data/demo.jpg)
 
 ### 待探究的问题 🔬
 - 生成的对抗样本与原图差别有些大（不排除代码逻辑的问题）

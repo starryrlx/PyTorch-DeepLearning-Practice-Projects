@@ -175,7 +175,7 @@ PyTorch
 ### 项目亮点 ✨
 - 可以作为强化学习入门练手项目，好玩😋
 - 使用 DQN 算法，包含当前策略网络和目标策略网络，提升训练稳定性。
-- 实现了 经验回放 (Experience Replay) 和 Epsilon-Greedy 策略，平衡探索与利用。
+- 实现了 经验回放 (Experience Replay) 和 $\epsilon$-Greedy 策略，平衡探索与利用。
 - 模型权重自动保存与加载，支持断点续训。 
 
 ---

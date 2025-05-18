@@ -152,7 +152,7 @@ PyTorch
 
 ### 项目亮点 ✨
 - 引入类别标签使生成器能够生成特定类别的图像，（应该）可以直接直接扩展到其他图像生成任务
-- 使用 `Wasserstein GAN with Gradient Penalty (WGAN-GP)损失函数` 和 `频谱归一化 (Spectral Normalization)` 提高训练的稳定性
+- 使用 `Wasserstein GAN with Gradient Penalty (WGAN-GP)`损失函数 和 `频谱归一化 (Spectral Normalization)` 提高训练的稳定性
 
 ### 待探究的问题 🔬
 - 生成图像的质量仍有提升空间
